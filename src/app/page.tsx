@@ -98,7 +98,6 @@ export default function Home() {
                 "Git/Version Control",
                 "Python",
                 "Java",
-                "C/C++",
                 "HTML/CSS",
                 "JavaScript/TypeScript",
                 "React/Next.js",
@@ -246,8 +245,10 @@ export default function Home() {
             transition={{ duration: 0.55 }}
             viewport={{ once: false, amount: 0.4 }}
           >
-            <h2 className="text-3xl font-bold mb-4 text-accent">Kontakt</h2>
-            <p className="text-lg text-subtext mb-6">Referanser oppgis ved etterspørsel.</p>
+            <h2 className="text-3xl font-bold mb-4 text-accent">{t("Kontakt", "Contact")}</h2>
+            <p className="text-lg text-subtext mb-6">
+              {t("Referanser oppgis ved etterspørsel.", "References available upon request.")}
+            </p>
 
             <div className="flex flex-col gap-3 lg:items-end">
               <a href="mailto:vidar-s-g@hotmail.com" className="underline hover:text-accent">vidar-s-g@hotmail.com</a>

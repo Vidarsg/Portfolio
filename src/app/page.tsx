@@ -253,7 +253,7 @@ export default function Home() {
             <div className="flex flex-col gap-3 lg:items-end">
               <a href="mailto:vidar-s-g@hotmail.com" className="underline hover:text-accent">vidar-s-g@hotmail.com</a>
               <a href="tel:+4741295488" className="hover:text-accent">(+47) 412 95 488</a>
-              <a href="https://www.linkedin.com/in/vidar-strand-gladsø-b8099837b/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/vidar-strand-glads%C3%B8-a9402b38b/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">LinkedIn</a>
               <a href="https://github.com/Vidarsg" target="_blank" rel="noopener noreferrer" className="hover:text-accent">Github</a>
             </div>
           </motion.div>

@@ -11,11 +11,89 @@ export default function Home() {
   const t = (no: string, en: string) => (lang === "no" ? no : en);
 
   return (
-   <main className={`${inter.className} bg-background text-text min-h-screen`}>
+   <main className={`${inter.className} bg-background text-text min-h-screen overflow-x-hidden relative`}>
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Gradient blob 1 - top left */}
+        <motion.div
+          className="absolute -top-40 -left-40 w-80 h-80 rounded-full opacity-30"
+          style={{
+            background: "radial-gradient(circle, #38bdf8 0%, transparent 70%)",
+          }}
+          animate={{
+            x: [0, 30, -20, 0],
+            y: [0, -30, 20, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Gradient blob 2 - bottom right */}
+        <motion.div
+          className="absolute -bottom-40 -right-40 w-80 h-80 rounded-full opacity-30"
+          style={{
+            background: "radial-gradient(circle, #38bdf8 0%, transparent 70%)",
+          }}
+          animate={{
+            x: [0, -30, 20, 0],
+            y: [0, 30, -20, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Gradient blob 3 - top right */}
+        <motion.div
+          className="absolute -top-32 -right-32 w-64 h-64 rounded-full opacity-20"
+          style={{
+            background: "radial-gradient(circle, #0ea5e9 0%, transparent 70%)",
+          }}
+          animate={{
+            x: [0, 25, -25, 0],
+            y: [0, 25, -25, 0],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Grid lines */}
+        <div className="absolute inset-0 opacity-15">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="grid"
+                width="50"
+                height="50"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 50 0 L 0 0 0 50"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Content wrapper with relative positioning */}
+      <div className="relative z-10">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full z-20 bg-background bg-opacity-95 backdrop-blur-sm border-b border-subtext">
-        <div className="max-w-7xl mx-auto relative flex justify-center items-center py-5 px-4 lg:px-6">
-          <nav className="space-x-6">
+      <header className="fixed top-0 left-0 right-0 z-20 bg-background bg-opacity-95 backdrop-blur-sm border-b border-subtext overflow-x-hidden">
+        <div className="relative flex justify-between items-center py-5 px-4 lg:px-6">
+          <nav className="hidden md:flex space-x-6">
             <a href="#profile" className="hover:text-accent transition">{t("Profil", "Profile")}</a>
             <a href="#skills" className="hover:text-accent transition">{t("Kompetanse", "Skills")}</a>
             <a href="#education" className="hover:text-accent transition">{t("Utdanning", "Education")}</a>
@@ -24,8 +102,11 @@ export default function Home() {
             <a href="#contact" className="hover:text-accent transition">{t("Kontakt", "Contact")}</a>
           </nav>
 
+          {/* Mobile menu placeholder */}
+          <div className="md:hidden flex-1" />
+
           {/* Right controls: language */}
-          <div className="absolute right-4 lg:right-6">
+          <div>
             <button
               type="button"
               onClick={() => setLang((p) => (p === "no" ? "en" : "no"))}
@@ -40,8 +121,8 @@ export default function Home() {
       </header>
 
       {/* PROFILE */}
-      <section id="profile" className="pt-28 lg:pt-32 pb-10">
-        <div className="max-w-7xl mx-auto flex items-center gap-8 px-4 lg:px-6">
+      <section id="profile" className="pt-28 lg:pt-32 pb-10 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-center gap-8">
           <motion.div
             className="w-full lg:w-[60%]"
             initial={{ opacity: 0, x: -40 }}
@@ -81,8 +162,8 @@ export default function Home() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="py-12">
-        <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 lg:px-6">
+      <section id="skills" className="py-12 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-start gap-8">
           <div className="hidden lg:block lg:w-[40%]" />
           <motion.div
             className="w-full lg:w-[60%] lg:text-right"
@@ -119,8 +200,8 @@ export default function Home() {
       </section>
 
       {/* EDUCATION */}
-      <section id="education" className="py-12">
-        <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 lg:px-6">
+      <section id="education" className="py-12 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-start gap-8">
           <motion.div
             className="w-full lg:w-[60%]"
             initial={{ opacity: 0, x: -40 }}
@@ -172,8 +253,8 @@ export default function Home() {
       </section>
 
       {/* ROLES */}
-      <section id="roles" className="py-12">
-        <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 lg:px-6">
+      <section id="roles" className="py-12 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-start gap-8">
           <div className="hidden lg:block lg:w-[40%]" />
           <motion.div
             className="w-full lg:w-[60%] lg:text-right"
@@ -205,8 +286,8 @@ export default function Home() {
       </section>
 
       {/* WORK */}
-      <section id="work" className="py-12">
-        <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 lg:px-6">
+      <section id="work" className="py-12 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-start gap-8">
           <motion.div
             className="w-full lg:w-[60%]"
             initial={{ opacity: 0, x: -40 }}
@@ -235,8 +316,8 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-14">
-        <div className="max-w-6xl mx-auto flex items-center gap-8 px-6 lg:px-8">
+      <section id="contact" className="py-14 w-full">
+        <div className="w-full px-4 lg:px-6 flex items-center gap-8">
           <div className="hidden lg:block lg:w-[40%]" />
           <motion.div
             className="w-full lg:w-[60%] lg:text-right"
@@ -260,9 +341,10 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="text-center py-6 px-6 lg:px-8 text-subtext text-sm max-w-7xl mx-auto">
+      <footer className="text-center py-6 px-4 lg:px-6 text-subtext text-sm w-full">
         © {new Date().getFullYear()} Vidar. Built with Next.js & Tailwind. Deployed on Vercel.
       </footer>
+      </div>
     </main>
   );
 }

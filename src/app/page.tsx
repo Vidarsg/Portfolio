@@ -307,11 +307,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PROJECTS */}
+      <section id="projects" className="w-full py-12 lg:py-14">
+          <div className="flex w-full items-start gap-8 px-4 lg:px-6">
+            <motion.div
+              className="w-full lg:w-[60%]"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55 }}
+              viewport={{ once: false, amount: 0.4 }}
+            >
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-bold mb-6 text-accent">{t("Tidligere utviklingsprosjekter", "Previous Development Projects")}</h2>
+                <h3 className="font-semibold">
+                  {t(
+                    "Utvikling av internt arkivsystem – Trondheim Kommune",
+                    "Development of Internal Archive System – Trondheim Municipality"
+                  )}
+                </h3>
+                <p className="text-subtext">01/2024 – 06/2024</p>
+                <ul className="mt-2 list-disc pl-5 text-subtext lg:list-none lg:pl-0 lg:[&_li]:pl-4 lg:[&_li]:relative lg:[&_li]:before:absolute lg:[&_li]:before:left-0 lg:[&_li]:before:top-0 lg:[&_li]:before:text-accent lg:[&_li]:before:content-['•']">
+                  <li>
+                    {t(
+                      "Utviklet et digitalt arkivsystem for håndtering og lagring av dokumenter i samarbeid med Trondheim Kommune. Arbeidet inkluderte design, implementasjon av backend/frontend, og testing",
+                      "Developed a digital archive system for managing and storing documents in collaboration with Trondheim Municipality. The work included design, implementation of backend/frontend, and testing"
+                    )}
+                  </li>
+                </ul>
+                <h3 className="font-semibold mt-6">
+                  {t(
+                    "Se ",
+                    "See "
+                  )}
+                  <a href="https://github.com/Vidarsg" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                    {t("GitHub", "GitHub")}
+                  </a>
+                  {t(
+                    " for full oversikt over personlige utviklingsprosjekter",
+                    " for a full overview of personal development projects"
+                  )}
+                </h3>
+              </div>
+            </motion.div>
+            <div className="hidden lg:block lg:w-[40%]" />
+          </div>
+      </section>
+
       {/* WORK */}
       <section id="work" className="py-12 w-full">
         <div className="w-full px-4 lg:px-6 flex items-start gap-8">
+          <div className="hidden lg:block lg:w-[40%]" />
           <motion.div
-            className="w-full lg:w-[60%]"
+            className="w-full lg:w-[60%] lg:text-right"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55 }}
@@ -319,30 +366,45 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-6 text-accent">{t("Tidligere arbeidserfaring", "Previous work experience")}</h2>
 
-            <SimpleRow org="NTNU" year="2015" desc={t("Pakking av konferansemateriell", "Packing conference materials")} />
             <SimpleRow
+              align="right"
+              org="NTNU"
+              year="2015"
+              desc={t("Pakking av konferansemateriell", "Packing conference materials")}
+            />
+            <SimpleRow
+              align="right"
               org={t("Trondheim Kammermusikkfestival", "Trondheim Chamber Music Festival")}
               year="2017"
               desc={t("Foto, reportasje og livestream", "Photography, reporting and livestream")}
             />
             <SimpleRow
+              align="right"
               org={t("Trondheim kommune", "Trondheim Municipality")}
               year="2018"
               desc={t("Deltakelse i design og utvikling av Trøndelags fylkesvåpen", "Participation in the design and development of Trøndelag’s coat of arms")}
             />
-            <SimpleRow org="Fretex" year="2018" desc={t("Produksjon av produktbilder og kampanje", "Product photography and campaign production")} />
-            <SimpleRow org="Femundløpet 2019" year="2019" desc={t("Arbeid med PR og medier", "PR and media work")} />
+            <SimpleRow
+              align="right"
+              org="Fretex"
+              year="2018"
+              desc={t("Produksjon av produktbilder og kampanje", "Product photography and campaign production")}
+            />
+            <SimpleRow
+              align="right"
+              org="Femundløpet 2019"
+              year="2019"
+              desc={t("Arbeid med PR og medier", "PR and media work")}
+            />
           </motion.div>
-          <div className="hidden lg:block lg:w-[40%]" />
         </div>
       </section>
 
       {/* CONTACT */}
       <section id="contact" className="py-14 w-full">
         <div className="w-full px-4 lg:px-6 flex items-center gap-8">
-          <div className="hidden lg:block lg:w-[40%]" />
           <motion.div
-            className="w-full lg:w-[60%] lg:text-right"
+            className="w-full lg:w-[60%] lg:text-left"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55 }}
@@ -353,13 +415,14 @@ export default function Home() {
               {t("Referanser oppgis ved etterspørsel.", "References available upon request.")}
             </p>
 
-            <div className="flex flex-col gap-3 lg:items-end">
+            <div className="flex flex-col gap-3 lg:items-start">
               <a href="mailto:vidar-s-g@hotmail.com" className="underline hover:text-accent">vidar-s-g@hotmail.com</a>
               <a href="tel:+4741295488" className="hover:text-accent">(+47) 412 95 488</a>
               <a href="https://www.linkedin.com/in/vidar-strand-glads%C3%B8-a9402b38b/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">LinkedIn</a>
               <a href="https://github.com/Vidarsg" target="_blank" rel="noopener noreferrer" className="hover:text-accent">Github</a>
             </div>
           </motion.div>
+          <div className="hidden lg:block lg:w-[40%]" />
         </div>
       </section>
 
@@ -402,12 +465,28 @@ function CVEntry({
   );
 }
 
-function SimpleRow({ org, year, desc }: { org: string; year: string; desc: string }) {
+function SimpleRow({
+  org,
+  year,
+  desc,
+  align = "left",
+}: {
+  org: string;
+  year: string;
+  desc: string;
+  align?: "left" | "right";
+}) {
   return (
-    <div className="flex flex-wrap gap-2 items-baseline border-b border-subtext/20 py-3">
+    <div
+      className={`flex flex-wrap gap-2 items-baseline border-b border-subtext/20 py-3 ${
+        align === "right" ? "lg:justify-end" : ""
+      }`}
+    >
       <span className="font-medium">{org}</span>
       <span className="text-subtext">• {year}</span>
-      <span className="text-subtext w-full lg:w-auto lg:ml-2">{desc}</span>
+      <span className={`text-subtext w-full lg:w-auto ${align === "right" ? "lg:ml-2 lg:text-right" : "lg:ml-2"}`}>
+        {desc}
+      </span>
     </div>
   );
 }

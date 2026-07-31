@@ -242,8 +242,8 @@ export default function Home() {
               period={t("08/2024 – d.d.", "08/2024 – present")}
               bullets={[
                 t(
-                  "Valgbare emner: Informasjonssystemer, Visuell formidling, Design av grafiske brukergrensesnitt, Innovasjon ved Design Thinking, Digitale plattformer og tjenesteinnovasjon",
-                  "Elective courses: Information Systems, Visual Communication, Design of Graphical User Interfaces, Innovation through Design Thinking, Digital Platforms and Service Innovation"
+                  "Valgbare emner: Informasjonssystemer, Visuell formidling, Design av grafiske brukergrensesnitt, Innovasjon ved Design Thinking, Digitale plattformer og tjenesteinnovasjon, Kvalitet av modeller og modelleringsspråk, Avanserte emner innen operativsystemer, kompilatorer og kjøretidsmiljøer.",
+                  "Elective courses: Information Systems, Visual Communication, Design of Graphical User Interfaces, Innovation through Design Thinking, Digital Platforms and Service Innovation, Quality of Models and Modeling Languages, Advanced Topics in Operating Systems, Compilers, and Runtime Environments."
                 ),
               ]}
             />

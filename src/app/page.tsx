@@ -173,26 +173,48 @@ export default function Home() {
             viewport={{ once: false, amount: 0.4 }}
           >
             <h2 className="text-3xl font-bold mb-5 text-accent">{t("Faglig kompetanse", "Academic skills")}</h2>
-            <div className="flex flex-wrap gap-2 lg:justify-end">
+            <div className="space-y-5 lg:space-y-6">
               {[
-                "Machine Learning/GenAI",
-                "Git/Version Control",
-                "Python",
-                "Java",
-                "HTML/CSS",
-                "JavaScript/TypeScript",
-                "React/Next.js",
-                "Figma",
-                "SQL/Firebase/PostgreSQL",
-                "Docker",
-                "Linux",
-              ].map((s) => (
-                <span
-                  key={s}
-                  className="px-3 py-1 rounded-md border border-subtext/60 text-subtext hover:border-accent hover:text-accent transition"
-                >
-                  {s}
-                </span>
+                {
+                  title: t("Programmeringsspråk", "Programming languages"),
+                  items: ["Java", "Python", "JavaScript / TypeScript", "SQL"],
+                },
+                {
+                  title: t("Webutvikling", "Web development"),
+                  items: ["React", "Node.js", "HTML / CSS", "REST APIs"],
+                },
+                {
+                  title: t("Teknologier & Verktøy", "Technologies & Tools"),
+                  items: ["Git", "Docker", "Figma", "Linux"],
+                },
+                {
+                  title: t("Konsepter", "Concepts"),
+                  items: [
+                    "Agile / Scrum",
+                    "CI/CD",
+                    "Static Code Analysis",
+                    "API Integration",
+                    "Data Modelling",
+                    "Software Architecture",
+                    "Large Language Models (LLMs)",
+                  ],
+                },
+              ].map((group) => (
+                <div key={group.title}>
+                  <h3 className="text-sm uppercase tracking-[0.2em] text-subtext mb-3">
+                    {group.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2 lg:justify-end">
+                    {group.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 rounded-md border border-subtext/60 text-subtext hover:border-accent hover:text-accent transition"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </motion.div>

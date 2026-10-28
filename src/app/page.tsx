@@ -239,7 +239,7 @@ export default function Home() {
                 "NTNU – Norges teknisk-naturvitenskapelige universitet",
                 "NTNU – Norwegian University of Science and Technology"
               )}
-              period={t("08/2024 – d.d.", "08/2024 – present")}
+              period={t("08/2024 – 06/2026.", "08/2024 – 06/2026")}
               bullets={[
                 t(
                   "Valgbare emner: Informasjonssystemer, Visuell formidling, Design av grafiske brukergrensesnitt, Innovasjon ved Design Thinking, Digitale plattformer og tjenesteinnovasjon, Kvalitet av modeller og modelleringsspråk, Avanserte emner innen operativsystemer, kompilatorer og kjøretidsmiljøer.",

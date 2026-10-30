@@ -6,7 +6,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [lang, setLang] = useState<"no" | "en">("no");
   const t = (no: string, en: string) => (lang === "no" ? no : en);
 
@@ -239,7 +241,7 @@ export default function Home() {
                 "NTNU – Norges teknisk-naturvitenskapelige universitet",
                 "NTNU – Norwegian University of Science and Technology"
               )}
-              period={t("08/2024 – 06/2026.", "08/2024 – 06/2026")}
+              period={t("08/2024 – 06/2026", "08/2024 – 06/2026")}
               bullets={[
                 t(
                   "Valgbare emner: Informasjonssystemer, Visuell formidling, Design av grafiske brukergrensesnitt, Innovasjon ved Design Thinking, Digitale plattformer og tjenesteinnovasjon, Kvalitet av modeller og modelleringsspråk, Avanserte emner innen operativsystemer, kompilatorer og kjøretidsmiljøer.",
@@ -331,6 +333,21 @@ export default function Home() {
                     {t(
                       "Utviklet et digitalt arkivsystem for håndtering og lagring av dokumenter i samarbeid med Trondheim Kommune. Arbeidet inkluderte design, implementasjon av backend/frontend, og testing",
                       "Developed a digital archive system for managing and storing documents in collaboration with Trondheim Municipality. The work included design, implementation of backend/frontend, and testing"
+                    )}
+                  </li>
+                </ul>
+                <h3 className="font-semibold mt-6">
+                  {t(
+                    "Utvikling og evaluering av kodeanalyseregler ved bruk av språkmodeller",
+                    "Development and Evaluation of Code Analysis Rules using Large Language Models"
+                  )}
+                </h3>
+                <p className="text-subtext">08/2025 – 06/2026</p>
+                <ul className="mt-2 list-disc pl-5 text-subtext lg:list-none lg:pl-0 lg:[&_li]:pl-4 lg:[&_li]:relative lg:[&_li]:before:absolute lg:[&_li]:before:left-0 lg:[&_li]:before:top-0 lg:[&_li]:before:text-accent lg:[&_li]:before:content-['•']">
+                  <li>
+                    {t(
+                      "Utviklet et oppsett for å generere, teste og evaluere regler for statisk kodeanalyse ved hjelp av storespråkmodeller. Arbeidet inkluderte skripting, automatisering av tester, og strukturert analyse av resultater",
+                      "Developed a setup for generating, testing, and evaluating rules for static code analysis using large language models. The work included scripting, automating tests, and structured analysis of results"
                     )}
                   </li>
                 </ul>

@@ -413,6 +413,12 @@ export default function Home() {
               year="2019"
               desc={t("Arbeid med PR og medier", "PR and media work")}
             />
+            <SimpleRow
+              align="right"
+              org="Eksamensportalen"
+              year={t("2026 - d.d", "2026 - present")}
+              desc={t("Fagansvarlig for emner på NTNU", "Academic Coordinator for courses at NTNU")}
+            />
           </motion.div>
         </div>
       </section>
